@@ -1,0 +1,47 @@
+/mon_projet/
+│
+├── app/
+│   ├── __init__.py
+│   │
+│   ├── /models/                  # Modèles : logique métier, données, persistance
+│   │   ├── __init__.py
+│   │   ├── base_model.py
+│   │   ├── utilisateur.py
+│   │   └── produit.py
+│   │
+│   ├── /views/                   # Vues : interfaces Tkinter (fenêtres, widgets…)
+│   │   ├── __init__.py
+│   │   ├── main_view.py          # Fenêtre principale
+│   │   ├── utilisateur_view.py   # Interface de gestion d’utilisateurs
+│   │   └── produit_view.py       # Interface de gestion de produits
+│   │
+│   ├── /controllers/             # Contrôleurs : gèrent les interactions View <-> Model
+│   │   ├── __init__.py
+│   │   ├── main_controller.py
+│   │   ├── utilisateur_controller.py
+│   │   └── produit_controller.py
+│   │
+│   ├── /services/                # (Optionnel) Services de traitement ou API
+│   │   ├── __init__.py
+│   │   └── data_service.py
+│   │
+│   ├── /utils/                   # Fonctions utilitaires (fichiers, logs, etc.)
+│   │   ├── __init__.py
+│   │   ├── helpers.py
+│   │   └── constants.py
+│   │
+│   └── app.py                    # Initialise l’application (point central)
+│
+├── data/
+│   ├── database.json             # Base locale ou fichiers persistants
+│   └── config.ini
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_models.py
+│   ├── test_controllers.py
+│   └── test_views.py
+│
+├── main.py                       # Point d’entrée du programme
+├── requirements.txt
+└── README.md
