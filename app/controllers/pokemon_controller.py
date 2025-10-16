@@ -28,7 +28,10 @@ class PokemonController:
         print(nature)
         return nature
     
-    def  afficher_item(self,name_or_id):
+    def afficher_item(self,name_or_id):
         item = self.service.get_item(name_or_id)
         print(item)
         return item
+    
+    def get_nb_data(self,category):
+        return self.service.get_count_data(category.lower())

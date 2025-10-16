@@ -99,7 +99,7 @@ class PokeAPIService:
         response = requests.get(url)
 
         if response.status_code != 200:
-            raise ValueError(f"Nature '{name_or_id}' introuvable ({response.status_code})")
+            raise ValueError(f"Item '{name_or_id}' introuvable ({response.status_code})")
 
         data = response.json()
 
@@ -109,3 +109,16 @@ class PokeAPIService:
         item_category = data["category"]["name"]
 
         return Items(name,id, description,item_category)
+    
+    @staticmethod
+    def get_count_data(category):
+        url = f"{PokeAPIService.BASE_URL}{category}"
+        response = requests.get(url)
+
+        if response.status_code != 200:
+            raise ValueError(f"({response.status_code})")
+
+        data = response.json()
+        return data["count"]
+    
+
