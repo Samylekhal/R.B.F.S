@@ -4,12 +4,12 @@ class BasePokemon:
     telles qu'elles proviennent de la PokéAPI.
     Ces données ne changent pas pendant le combat.
     """
-    def __init__(self, name, id, types, stats, talents, movepool, sprites):
+    def __init__(self, name, id, types, stats, abilities, movepool, sprites):
         self.name = name
         self.id = id
         self.types = types              # ex: ["fire", "flying"]
         self.stats = stats              # ex: {"hp": 78, "attack": 84, ...}
-        self.talents = talents          # ex: ["blaze", "solar-power"]
+        self.abilities = abilities          # ex: ["blaze", "solar-power"]
         self.movepool = movepool        # ex: ["flamethrower", "fly", "heat-wave", ...]
         self.sprites = sprites          # URL de l’image officielle
 
