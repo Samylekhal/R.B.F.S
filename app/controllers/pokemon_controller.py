@@ -7,10 +7,12 @@ class PokemonController:
     def afficher_pokemon(self, name_or_id):
         pokemon = self.service.get_pokemon(name_or_id)
         print(pokemon)
+        print("Poids :", pokemon.weight)
+        print("Taille :", pokemon.height)
+
         print("Stats :", pokemon.stats)
         print("Talents :", ", ".join(pokemon.abilities))
         print("Nombre d'attaques possibles :", len(pokemon.movepool))
-        print("Sprite :", pokemon.sprites)
         return pokemon
     
     def afficher_move(self,name_or_id):

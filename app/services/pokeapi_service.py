@@ -2,7 +2,7 @@ import requests
 from app.models.BasePokemon import BasePokemon
 from app.models.Moves import Moves
 from app.models.Abilities import Abilities
-from app.models.Nature import Natures
+from app.models.Natures import Natures
 from app.models.Items import Items
 
 class PokeAPIService:
@@ -21,13 +21,14 @@ class PokeAPIService:
 
         name = data["name"]
         id = data["id"]
+        weight = data["weight"]
+        height = data["height"]
         types = [t["type"]["name"] for t in data["types"]]
         stats = {s["stat"]["name"]: s["base_stat"] for s in data["stats"]}
         abilities = [a["ability"]["name"] for a in data["abilities"]]
         movepool = [m["move"]["name"] for m in data["moves"]]
-        sprites = data["sprites"]["front_default"]
 
-        return BasePokemon(name, id, types, stats, abilities, movepool, sprites)
+        return BasePokemon(name, id, types, weight, height, stats, abilities, movepool)
     
     # get_moves  | Base power, PP, accurancy, description  
     
