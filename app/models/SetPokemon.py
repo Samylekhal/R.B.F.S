@@ -2,11 +2,20 @@ import BasePokemon
 import Natures
 
 class SetPokemon:
-    def __init__(self, base_pokemon: BasePokemon, level):
+    def __init__(self, base_pokemon: BasePokemon):
         self.base_pokemon = base_pokemon
+        level = 50  # niveau par défaut
+        self.max_hp = self.calculate_stat("hp", level)
         self.current_hp = self.calculate_stat("hp", level)
+        self.stats = {
+            "attack": self.calculate_stat("attack", level),
+            "defense": self.calculate_stat("defense", level),
+            "special_attack": self.calculate_stat("special_attack", level),
+            "special_defense": self.calculate_stat("special_defense", level),
+            "speed": self.calculate_stat("speed", level)
+        }
         self.level = level
-        self.nature = "hardy"  # par défaut, nature neutre
+        self.nature = None
         self.IV = {
             "hp": 31,
             "attack": 31,
@@ -30,9 +39,8 @@ class SetPokemon:
         self.modified_stats = {"attack": 0, "defense": 0, "special_attack": 0, "special_defense": 0, "speed": 0, "accuracy": 0, "evasion": 0}
     
     def set_nature(self, nature: Natures):
-        self.nature = nature.name
-        self.nature_modifier = nature.get_nature_modifier()
- 
+        self.nature = nature
+        
     def calculate_stat(self, stat_name, level, nature_modifier=1.0):
         base_stat = self.base_pokemon.stats[stat_name]
         iv = self.IV[stat_name]
@@ -40,9 +48,9 @@ class SetPokemon:
         if stat_name == "hp":
             if self.base_pokemon.id == 292:  # Munja bien sûr sinon c'est pas drôle
                 return 1
-            return ((2 * base_stat + iv + (ev // 4)) * level) // 100 + level + 10
+            return ((2 * (base_stat + iv) + (ev // 4)) * level) // 100 + level + 10
         else:
-            return (((2 * base_stat + iv + (ev // 4)) * level) // 100 + 5) * nature_modifier
+            return (((2 * (base_stat + iv) + (ev // 4)) * level) // 100 + 5) * nature_modifier
         
     def set_IV(self, stat_name, value):
         if 0 <= value <= 31:
