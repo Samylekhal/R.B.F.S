@@ -85,12 +85,9 @@ class PokeAPIService:
         data = response.json()
 
         name = data["name"]
-        id = data["id"]
-        INCstat = (data["increased_stat"]["name"] if data["increased_stat"] else "null")
-        DECstat = (data["decreased_stat"]["name"] if data["decreased_stat"] else "null")
-
-
-        return Natures(name,id,INCstat,DECstat)
+        nature = Natures(name)
+        nature.id = data["id"]
+        return nature
 
     # get_item
     @staticmethod
