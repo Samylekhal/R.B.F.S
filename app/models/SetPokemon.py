@@ -20,7 +20,7 @@ class SetPokemon:
 
         self.moves = [None, None, None, None]
         self.ability = self.set_ability()
-        self.item = None
+        self.item = self.set_item()
 
         # statut et modificateurs de stats en combat
         self.status = "neutre"
