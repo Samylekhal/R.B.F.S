@@ -6,9 +6,9 @@ if __name__ == "__main__":
     controller = PokemonController()
     i = 1
     team = Team()
-    team.add_pokemon(controller.get_Setpokemon(292))  # Munja
-    team.add_pokemon(controller.get_Setpokemon("pikachu"))  # Pikachu
-    team.add_pokemon(controller.get_Setpokemon("arceus"))  # Arceus
+    team.add_pokemon(controller.get_Setpokemon("shedinja")) 
+    team.add_pokemon(controller.get_Setpokemon("pikachu"))  
+    team.add_pokemon(controller.get_Setpokemon("arceus"))  
 
     print(team)
     # while i <= MAX_NATURE:

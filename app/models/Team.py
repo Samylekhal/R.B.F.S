@@ -14,7 +14,7 @@ class Team:
         self.pokemons.pop(index)
 
     def __str__(self):
-        team_str = "Team:\n"
+        team_str = "TEAM:\n"
         for pokemon in self.pokemons:
-            team_str += str(pokemon) + "\n ---------------------------- \n"
+            team_str += str(pokemon) + "\n---------------------------- \n"
         return team_str
