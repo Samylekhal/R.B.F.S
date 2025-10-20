@@ -1,8 +1,8 @@
 class Natures:
 
-    def __init__(self, name):
+    def __init__(self, name="hardy", id=1):
         self.name = name
-        self.id = None
+        self.id = id
         self.nature_modifier = self.get_nature_modifier(name)
         self.INCstat = self.get_INCstat()
         self.DECstat = self.get_DECstat()

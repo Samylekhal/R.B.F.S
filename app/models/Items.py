@@ -1,6 +1,6 @@
 class Items:
 
-    def __init__(self, name, id, description, item_category):
+    def __init__(self, name = "Aucun", id = 0, description = "aucun effet", item_category = "aucune catégorie"):
         self.name = name
         self.id = id
         self.description = description
