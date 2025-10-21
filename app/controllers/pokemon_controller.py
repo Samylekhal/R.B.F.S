@@ -11,15 +11,15 @@ class PokemonController:
         set_pokemon = SetPokemon.SetPokemon(pokemon)
         return set_pokemon
 
-    def afficher_pokemon(self, name_or_id):
+    def get_Basepokemon(self, name_or_id):
         pokemon = self.service.get_pokemon(name_or_id)
-        print(pokemon)
-        print("Poids :", pokemon.weight)
-        print("Taille :", pokemon.height)
+        # print(pokemon)
+        # print("Poids :", pokemon.weight)
+        # print("Taille :", pokemon.height)
 
-        print("Stats :", pokemon.stats)
-        print("Talents :", ", ".join(pokemon.abilities))
-        print("Nombre d'attaques possibles :", len(pokemon.movepool))
+        # print("Stats :", pokemon.stats)
+        # print("Talents :", ", ".join(pokemon.abilities))
+        # print("Nombre d'attaques possibles :", len(pokemon.movepool))
         return pokemon
     
     def afficher_move(self,name_or_id):
