@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "ginkgo-landing-area",
+      "url": "https://pokeapi.co/api/v2/location-area/976/"
+    }
+  ],
+  "game_indices": [],
+  "id": 982,
+  "name": "ginkgo-landing",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Ginkgo Landing"
+    }
+  ],
+  "region": {
+    "name": "hisui",
+    "url": "https://pokeapi.co/api/v2/region/9/"
+  }
+}

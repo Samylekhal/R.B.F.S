@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "ancient-quarry-area",
+      "url": "https://pokeapi.co/api/v2/location-area/947/"
+    }
+  ],
+  "game_indices": [],
+  "id": 953,
+  "name": "ancient-quarry",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Ancient Quarry"
+    }
+  ],
+  "region": {
+    "name": "hisui",
+    "url": "https://pokeapi.co/api/v2/region/9/"
+  }
+}

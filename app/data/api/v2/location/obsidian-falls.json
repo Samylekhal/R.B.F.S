@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "obsidian-falls-area",
+      "url": "https://pokeapi.co/api/v2/location-area/1001/"
+    }
+  ],
+  "game_indices": [],
+  "id": 1007,
+  "name": "obsidian-falls",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Obsidian Falls"
+    }
+  ],
+  "region": {
+    "name": "hisui",
+    "url": "https://pokeapi.co/api/v2/region/9/"
+  }
+}

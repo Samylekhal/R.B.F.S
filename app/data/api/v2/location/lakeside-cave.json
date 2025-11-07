@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "lakeside-cave-area",
+      "url": "https://pokeapi.co/api/v2/location-area/901/"
+    }
+  ],
+  "game_indices": [],
+  "id": 914,
+  "name": "lakeside-cave",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Lakeside Cave"
+    }
+  ],
+  "region": {
+    "name": "galar",
+    "url": "https://pokeapi.co/api/v2/region/8/"
+  }
+}

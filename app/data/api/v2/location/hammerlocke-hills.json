@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "hammerlocke-hills-area",
+      "url": "https://pokeapi.co/api/v2/location-area/893/"
+    }
+  ],
+  "game_indices": [],
+  "id": 906,
+  "name": "hammerlocke-hills",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Hammerlocke Hills"
+    }
+  ],
+  "region": {
+    "name": "galar",
+    "url": "https://pokeapi.co/api/v2/region/8/"
+  }
+}

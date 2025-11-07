@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "roaring-sea-caves-area",
+      "url": "https://pokeapi.co/api/v2/location-area/914/"
+    }
+  ],
+  "game_indices": [],
+  "id": 926,
+  "name": "roaring-sea-caves",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Roaring-Sea Caves"
+    }
+  ],
+  "region": {
+    "name": "galar",
+    "url": "https://pokeapi.co/api/v2/region/8/"
+  }
+}

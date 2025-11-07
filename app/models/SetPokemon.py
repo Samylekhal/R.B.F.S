@@ -43,8 +43,10 @@ class SetPokemon:
             raise ValueError("A Pokémon can only have up to 4 moves")
         # fixme: vérifier que les moves sont dans le movepool du pokémon
         for move in moves:
-            if move not in self.base_pokemon.movepool or move is None:
+            if move is None:
                 move = "<vide>"
+            elif move not in self.base_pokemon.movepool:
+                raise ValueError("Invalid move for this Pokémon")
         self.moves = moves
         return moves
 

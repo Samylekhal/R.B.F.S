@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "motostoke-riverbank-area",
+      "url": "https://pokeapi.co/api/v2/location-area/908/"
+    }
+  ],
+  "game_indices": [],
+  "id": 920,
+  "name": "motostoke-riverbank",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Motostoke Riverbank"
+    }
+  ],
+  "region": {
+    "name": "galar",
+    "url": "https://pokeapi.co/api/v2/region/8/"
+  }
+}

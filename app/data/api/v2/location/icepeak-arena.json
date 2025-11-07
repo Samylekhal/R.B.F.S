@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "icepeak-arena-area",
+      "url": "https://pokeapi.co/api/v2/location-area/989/"
+    }
+  ],
+  "game_indices": [],
+  "id": 995,
+  "name": "icepeak-arena",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Icepeak Arena"
+    }
+  ],
+  "region": {
+    "name": "hisui",
+    "url": "https://pokeapi.co/api/v2/region/9/"
+  }
+}

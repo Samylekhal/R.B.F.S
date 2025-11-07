@@ -1,0 +1,19 @@
+{
+  "areas": [],
+  "game_indices": [],
+  "id": 826,
+  "name": "medali",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Medali"
+    }
+  ],
+  "region": {
+    "name": "paldea",
+    "url": "https://pokeapi.co/api/v2/region/10/"
+  }
+}

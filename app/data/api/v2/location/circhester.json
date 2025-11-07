@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "circhester-area",
+      "url": "https://pokeapi.co/api/v2/location-area/869/"
+    }
+  ],
+  "game_indices": [],
+  "id": 886,
+  "name": "circhester",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Circhester"
+    }
+  ],
+  "region": {
+    "name": "galar",
+    "url": "https://pokeapi.co/api/v2/region/8/"
+  }
+}

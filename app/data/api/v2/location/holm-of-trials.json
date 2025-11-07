@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "holm-of-trials-area",
+      "url": "https://pokeapi.co/api/v2/location-area/985/"
+    }
+  ],
+  "game_indices": [],
+  "id": 991,
+  "name": "holm-of-trials",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Holm of Trials"
+    }
+  ],
+  "region": {
+    "name": "hisui",
+    "url": "https://pokeapi.co/api/v2/region/9/"
+  }
+}

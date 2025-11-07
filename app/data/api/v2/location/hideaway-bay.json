@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "hideaway-bay-area",
+      "url": "https://pokeapi.co/api/v2/location-area/984/"
+    }
+  ],
+  "game_indices": [],
+  "id": 990,
+  "name": "hideaway-bay",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Hideaway Bay"
+    }
+  ],
+  "region": {
+    "name": "hisui",
+    "url": "https://pokeapi.co/api/v2/region/9/"
+  }
+}

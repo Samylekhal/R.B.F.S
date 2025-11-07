@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "west-lake-axewell-area",
+      "url": "https://pokeapi.co/api/v2/location-area/943/"
+    }
+  ],
+  "game_indices": [],
+  "id": 949,
+  "name": "west-lake-axewell",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "West Lake Axewell"
+    }
+  ],
+  "region": {
+    "name": "galar",
+    "url": "https://pokeapi.co/api/v2/region/8/"
+  }
+}

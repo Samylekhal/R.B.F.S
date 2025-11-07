@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "sacred-plaza-area",
+      "url": "https://pokeapi.co/api/v2/location-area/1006/"
+    }
+  ],
+  "game_indices": [],
+  "id": 1012,
+  "name": "sacred-plaza",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Sacred Plaza"
+    }
+  ],
+  "region": {
+    "name": "hisui",
+    "url": "https://pokeapi.co/api/v2/region/9/"
+  }
+}

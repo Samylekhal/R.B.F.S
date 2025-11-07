@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "primeval-grotto-area",
+      "url": "https://pokeapi.co/api/v2/location-area/1004/"
+    }
+  ],
+  "game_indices": [],
+  "id": 1010,
+  "name": "primeval-grotto",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Primeval Grotto"
+    }
+  ],
+  "region": {
+    "name": "hisui",
+    "url": "https://pokeapi.co/api/v2/region/9/"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "frigid-sea-area",
+      "url": "https://pokeapi.co/api/v2/location-area/880/"
+    }
+  ],
+  "game_indices": [],
+  "id": 896,
+  "name": "frigid-sea",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Frigid Sea"
+    }
+  ],
+  "region": {
+    "name": "galar",
+    "url": "https://pokeapi.co/api/v2/region/8/"
+  }
+}

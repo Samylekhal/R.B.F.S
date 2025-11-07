@@ -1,0 +1,24 @@
+{
+  "areas": [
+    {
+      "name": "molten-arena-area",
+      "url": "https://pokeapi.co/api/v2/location-area/998/"
+    }
+  ],
+  "game_indices": [],
+  "id": 1004,
+  "name": "molten-arena",
+  "names": [
+    {
+      "language": {
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
+      },
+      "name": "Molten Arena"
+    }
+  ],
+  "region": {
+    "name": "hisui",
+    "url": "https://pokeapi.co/api/v2/region/9/"
+  }
+}
