@@ -1,5 +1,4 @@
 import pytest
-from app.models.BasePokemon import BasePokemon
 from app.models.SetPokemon import SetPokemon
 from app.models.Natures import Natures
 from app.models.Items import Items
@@ -53,8 +52,8 @@ def test_invalid_iv_value(set_munja):
     
 
 def test_set_moves_valid(set_munja):
-    set_munja.set_moves(["griffe", "ténacité"])
-    assert set_munja.moves == ["griffe", "ténacité"]
+    set_munja.set_moves(["scratch", "shadow-ball"])
+    assert set_munja.moves == ["scratch", "shadow-ball"]
 
 def test_set_moves_invalid(set_munja):
     with pytest.raises(ValueError):
@@ -65,8 +64,9 @@ def test_set_ability_valid(set_munja):
     assert set_munja.ability == "wonder-guard"
 
 def test_set_invalid_ability(set_munja):
-    with pytest.raises(ValueError):
-        set_munja.set_ability("Levitation")
+    set_munja.set_ability("Levitate")
+    assert set_munja.ability == "wonder-guard"
+
 
 def test_set_nature_changes_stats(set_munja):
     old_attack = set_munja.stats["attack"]

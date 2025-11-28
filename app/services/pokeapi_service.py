@@ -1,24 +1,53 @@
+import json
+import os
 import requests
+
 from app.models.BasePokemon import BasePokemon
 from app.models.Moves import Moves
 from app.models.Abilities import Abilities
 from app.models.Natures import Natures
 from app.models.Items import Items
 
+
 class PokeAPIService:
     BASE_URL = "https://pokeapi.co/api/v2/"
+    LOCAL_DATA_PATH = os.path.join("R.B.F.S", "app", "data", "api", "v2")
 
     @staticmethod
-    def get_pokemon(name_or_id) -> BasePokemon:
-        name_or_id = str(name_or_id)
-        url = f"{PokeAPIService.BASE_URL}{"pokemon/"}{name_or_id.lower()}"
+    def _load_local_data(category: str, name_or_id: str):
+        """
+        Essaie de charger un fichier JSON localement avant de faire un appel API.
+        """
+        file_path = os.path.join(PokeAPIService.LOCAL_DATA_PATH, category, f"{name_or_id.lower()}.json")
+        if os.path.exists(file_path):
+            with open(file_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        return None
+
+    @staticmethod
+    def _fetch_data(category: str, name_or_id: str):
+        """
+        Récupère les données : d'abord localement, sinon via l'API.
+        """
+        # Essai en local
+        data = PokeAPIService._load_local_data(category, name_or_id)
+        if data is not None:
+            return data
+
+        # Sinon, appel API
+        url = f"{PokeAPIService.BASE_URL}{category}/{name_or_id.lower()}"
         response = requests.get(url)
-
         if response.status_code != 200:
-            raise ValueError(f"Pokémon '{name_or_id}' introuvable ({response.status_code})")
+            raise ValueError(f"{category.capitalize()} '{name_or_id}' introuvable ({response.status_code})")
 
-        data = response.json()
+        return response.json()
 
+    # --------------------------------------------------------------------------
+    # Pokémon
+    # --------------------------------------------------------------------------
+    @staticmethod
+    def get_pokemon(name_or_id) -> BasePokemon:
+        data = PokeAPIService._fetch_data("pokemon", str(name_or_id))
         name = data["name"]
         id = data["id"]
         weight = data["weight"]
@@ -29,94 +58,69 @@ class PokeAPIService:
         movepool = [m["move"]["name"] for m in data["moves"]]
 
         return BasePokemon(name, id, types, weight, height, stats, abilities, movepool)
-    
-    # get_moves  | Base power, PP, accurancy, description  
-    
+
+    # --------------------------------------------------------------------------
+    # Capacités (Moves)
+    # --------------------------------------------------------------------------
     @staticmethod
     def get_move(name_or_id) -> Moves:
-        name_or_id = str(name_or_id)
-        url = f"{PokeAPIService.BASE_URL}{"move/"}{name_or_id.lower()}"
-        response = requests.get(url)
-
-        if response.status_code != 200:
-            raise ValueError(f"Capacité '{name_or_id}' introuvable ({response.status_code})")
-
-        data = response.json()
-
+        data = PokeAPIService._fetch_data("move", str(name_or_id))
         name = data["name"]
         id = data["id"]
         damageclass = data["damage_class"]["name"]
-        type = data["type"]["name"]
-        Basepower = data["power"]
-        PP = data["pp"]
-        accuracy = data["accuracy"]
-        description = data["flavor_text_entries"][0]["flavor_text"]
+        type_ = data["type"]["name"]
+        basepower = data.get("power")
+        pp = data.get("pp")
+        accuracy = data.get("accuracy")
+        description = next((entry["flavor_text"] for entry in data["flavor_text_entries"] if entry["language"]["name"] == "en"), "")
+        return Moves(name, id, damageclass, type_, basepower, pp, accuracy, description)
 
-        return Moves(name,id,damageclass,type,Basepower,PP,accuracy,description)
-    
-    # get_abilities | Name, description
+    # --------------------------------------------------------------------------
+    # Talents (Abilities)
+    # --------------------------------------------------------------------------
     @staticmethod
     def get_ability(name_or_id) -> Abilities:
-        name_or_id = str(name_or_id)
-        url = f"{PokeAPIService.BASE_URL}{"ability/"}{name_or_id.lower()}"
-        response = requests.get(url)
-
-        if response.status_code != 200:
-            raise ValueError(f"Talent '{name_or_id}' introuvable ({response.status_code})")
-
-        data = response.json()
-
+        data = PokeAPIService._fetch_data("ability", str(name_or_id))
         name = data["name"]
         id = data["id"]
-        description = data["flavor_text_entries"][1]["flavor_text"]
+        description = next((entry["flavor_text"] for entry in data["flavor_text_entries"] if entry["language"]["name"] == "en"), "")
+        return Abilities(name, id, description)
 
-        return Abilities(name,id,description)
-    
-    # get_nature
+    # --------------------------------------------------------------------------
+    # Natures
+    # --------------------------------------------------------------------------
     @staticmethod
     def get_nature(name_or_id) -> Natures:
-        name_or_id = str(name_or_id)
-        url = f"{PokeAPIService.BASE_URL}{"nature/"}{name_or_id.lower()}"
-        response = requests.get(url)
-
-        if response.status_code != 200:
-            raise ValueError(f"Nature '{name_or_id}' introuvable ({response.status_code})")
-
-        data = response.json()
-
+        data = PokeAPIService._fetch_data("nature", str(name_or_id))
         name = data["name"]
         nature = Natures(name)
         nature.id = data["id"]
         return nature
 
-    # get_item
+    # --------------------------------------------------------------------------
+    # Objets (Items)
+    # --------------------------------------------------------------------------
     @staticmethod
     def get_item(name_or_id) -> Items:
-        name_or_id = str(name_or_id)
-        url = f"{PokeAPIService.BASE_URL}{"item/"}{name_or_id.lower()}"
-        response = requests.get(url)
-
-        if response.status_code != 200:
-            raise ValueError(f"Item '{name_or_id}' introuvable ({response.status_code})")
-
-        data = response.json()
-
+        data = PokeAPIService._fetch_data("item", str(name_or_id))
         name = data["name"]
         id = data["id"]
-        description = data["effect_entries"][0]["effect"]
+        description = next((entry["effect"] for entry in data["effect_entries"] if entry["language"]["name"] == "en"), "")
         item_category = data["category"]["name"]
+        return Items(name, id, description, item_category)
 
-        return Items(name,id, description,item_category)
-    
+    # --------------------------------------------------------------------------
+    # Compteur de données (utile pour stats ou pagination)
+    # --------------------------------------------------------------------------
     @staticmethod
     def get_count_data(category):
+        local_dir = os.path.join(PokeAPIService.LOCAL_DATA_PATH, category)
+        if os.path.exists(local_dir):
+            return len([f for f in os.listdir(local_dir) if f.endswith(".json")])
+
+        # Sinon fallback API
         url = f"{PokeAPIService.BASE_URL}{category}"
         response = requests.get(url)
-
         if response.status_code != 200:
             raise ValueError(f"({response.status_code})")
-
-        data = response.json()
-        return data["count"]
-    
-
+        return response.json()["count"]
