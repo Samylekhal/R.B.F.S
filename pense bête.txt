@@ -1,10 +1,20 @@
-créer setpokemon, il doit avoir:
+Données:
+
+- globales
+le winrate
+type le plus/moins présent dans les teams
+type qui reporte le plus/moins de fight 
+item plus utilisés
+attaque la plus utilisé
+moyenne de switch
+MVP système
 
 
-créer une équipe de pokemon: tableaux de pokemons composé de 1 à 6 poke 
+ratio dégat/physique spéciale
 
-damage calculator (setpokemon1,setpokemon2,attaque) -> dégat infligés
-
-créer une fonction attaque (setpokemon1,setpokemon2,attaque) -> print des deux setpokemon
-
-
+- Individuelles
+dégat infligés/subit 
+attaque la plus utilisé/ moins utilisé
+Taux de mort
+info switch:
+    moyenne switch
